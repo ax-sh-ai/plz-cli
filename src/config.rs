@@ -26,7 +26,7 @@ impl Config {
             _ => return,
         };
 
-        std::fs::OpenOptions::new()
+        let _ = std::fs::OpenOptions::new()
             .append(true)
             .open(history_file)
             .map_or((), |mut file| {
